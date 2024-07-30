@@ -57,8 +57,8 @@ sampler smpDepthBackup { Texture = texDepthBackup; AddressU = Clamp; AddressV = 
 
 
 //Motion Vectors
-texture texMotionVectors < pooled = false; > { Width = BUFFER_WIDTH; Height = BUFFER_HEIGHT; Format = RG16F; };
-sampler SamplerMotionVectors { Texture = texMotionVectors; AddressU = Clamp; AddressV = Clamp; MipFilter = Point; MinFilter = Point; MagFilter = Point; };
+texture Deferred__MotionVectorsTex < pooled = false; > { Width = BUFFER_WIDTH; Height = BUFFER_HEIGHT; Format = RG16F; };
+sampler SamplerMotionVectors { Texture = Deferred__MotionVectorsTex; AddressU = Clamp; AddressV = Clamp; MipFilter = Point; MinFilter = Point; MagFilter = Point; };
 
 //Easy way to sample the velocity buffer
 float2 sampleMotion(float2 texcoord)
